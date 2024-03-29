@@ -2,14 +2,13 @@
 $insert = false;
 if(isset($_POST['name'])){
     // Set connection variables
-    $server = "render-mysql-hostname";
-    $username = "render-mysql-username";
-    $password = "render-mysql-password";
-    $database = "render-mysql-database-name";
+$server = getenv('DB_SERVER');
+$username = getenv('DB_USERNAME');
+$password = getenv('DB_PASSWORD');
+$database = getenv('DB_DATABASE');
 
-    // Create a database connection
-    $con = mysqli_connect($server, $username, $password);
-
+// Create a database connection
+$con = mysqli_connect($server, $username, $password, $database);
     // Check for connection success
     if(!$con){
         die("connection to this database failed due to" . mysqli_connect_error());
