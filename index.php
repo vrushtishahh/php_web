@@ -2,9 +2,10 @@
 $insert = false;
 if(isset($_POST['name'])){
     // Set connection variables
-    $server = "localhost";
-    $username = "root";
-    $password = "";
+    $server = "render-mysql-hostname";
+    $username = "render-mysql-username";
+    $password = "render-mysql-password";
+    $database = "render-mysql-database-name";
 
     // Create a database connection
     $con = mysqli_connect($server, $username, $password);
